@@ -1,0 +1,259 @@
+@import "../index.module.css";
+ 
+
+.inactive {
+    position: fixed;
+    width: 3rem;
+    animation: bounce 1s alternate infinite;
+}
+
+.active {
+    position: fixed;
+    width: 3rem;
+    animation: 0.5s zoom alternate forwards;
+}
+
+.inactive:hover {
+    cursor: pointer;
+}
+
+.speech {
+    position: fixed;
+    animation: fadein 1s ease-in;
+    transform: scale(8) translateX(10px) translateY(-15px);
+}
+
+.link {
+    position: fixed;
+    animation: fadein 1s ease-in;
+    transform: scale(8) translateX(10px) translateY(-14px);
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.link>img {
+    animation: bounceAlt 1s infinite alternate;
+    transform: scale(0.4);
+    opacity: 0.5;
+    transition: 0.2s opacity ease-in-out;
+}
+.link>img:hover {
+    opacity: 1;
+}
+
+
+.fade>img {
+    animation: leave 8s 1 forwards;
+}
+
+.fade>div>.speech {
+    animation: fadein reverse 1s 1 forwards;
+}
+
+.fade>div>.link {
+    transition: transform 1s;
+    transform: scale(12) translateX(-20px) translateY(0px);
+    /* opacity: 0; */
+    cursor: default;
+}
+
+.fade>div>.link>img {
+    animation: bounceAlt infinite 1000s;
+    opacity: 1;
+}
+
+.fade .link>img:hover {
+    animation: bounceAlt 1000s infinite alternate;
+}
+
+.fade>div>.link::after {
+    content: 'James Crutchley - Web Developer';
+    font-size: 2px;
+    animation: slideIn 1s ease-in-out, fadein 1s ease;
+    position: fixed;
+    white-space: nowrap;
+    transform: translate(-5px, 11px);
+    font-weight: bold;
+}
+
+.fade>div>.link::before  {
+    content: '..........................................................................................';
+    color: transparent;
+    font-size: 2px;
+    position: fixed;
+    transform: translate(13px, 11px) scale(0.6);
+    border-bottom: 1px solid black; 
+    padding-bottom: 1px;
+    animation: fadein 2s;
+}
+
+.view {
+    z-index: 999;
+    position: fixed;
+    transform: translate(160px, 40px) scale(0.9);
+    background-color: black;
+    color: white;
+    animation: 2.5s fadein;
+    transition: filter 0.2s ease-in-out, border 0.2s ease-in-out, transform 1s ease-in-out; 
+}
+
+.view:hover {
+    filter: invert(100%);
+    border: white 1px solid;
+}
+
+@keyframes leave {
+    0% {
+        transform: translateX(-180px) scale(6);
+    }
+    40% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(200vw) scale(4);
+    }
+}
+
+@keyframes wobble {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes spring {
+    0% {
+        transform: scaleX(0);
+    }
+    80% {
+        transform: translate(13px, 11px) scaleX(0);
+    }
+    100% {
+        transform: translate(13px, 11px) scale(0.7);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translate(-50px, 11px) scale(0.4);
+    }
+    80% {
+        transform: translate(-5px, 11px) scale(0.4);
+    }
+    100% {
+        transform: translate(-5px, 11px) scale(1);
+    }
+}
+
+@keyframes bounceAlt {
+    0% {
+        transform: scale(0.4);
+    }
+    100% {
+        transform: scale(0.5);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(6) translateX(-30px);
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .speech, .link {
+        transform: scale(4) translateY(-20px) translateX(15px);
+    }
+    .link {
+        transform: scale(4) translateY(-20px) translateX(15px);
+    }
+
+    .fade>div>.link {
+        transform: scale(12) translate(-1px,-7px);        display: flex;
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fade>div>.link::after {
+        content: 'James Crutchley - Web Developer';
+        font-size: 1.5px;
+        animation: _slideIn_gb4dx_1 1s ease-in-out, _fadein_gb4dx_1 1s ease;
+        position: fixed;
+        white-space: nowrap;
+        transform: translate(0px, 18px);       
+        font-weight: bold;
+        order: 2;
+    }
+
+    .fade>div>.link::before {
+        order: 3;
+        content: '......................................................................................................';
+        color: transparent;
+        font-size: 2px;
+        position: fixed;
+        transform: translate(-2px, 18px) scale(0.6) scaleX(5);
+        border-bottom: 1px solid black;
+        padding-bottom: 1px;
+        animation: _fadein_gb4dx_1 2s;
+    }
+
+    .view {
+        transform: translate(-90px, 65px) scale(1);
+        width: 180px;
+    }
+    
+    @keyframes zoom {
+        0% {
+            transform: scale(1);
+        }
+        20% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(3) translateX(-30px);
+        }
+    }
+}
