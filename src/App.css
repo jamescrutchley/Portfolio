@@ -1,8 +1,22 @@
+:root {
+    --background: #f4fcff;
+    --text-primary: #23313f;
+    --text-secondary: #517087;
+    --fadein: 0.3s fadein ease;
+  }
+  [data-theme=dark] {
+    --background: #23313f;
+    --text-primary: #dbe0e2;
+    --text-secondary: #6f96b5;
+  }
+  
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 auto;
   text-align: center;
+  background-color: var(--background);
+  color: var(--text-primary);
 }
 
 .logo {
@@ -12,10 +26,7 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 5em var(--text-secondary) contrast(200%));
 }
 
 @keyframes logo-spin {
@@ -27,10 +38,23 @@
   }
 }
 
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
+}
+
+a {
+    color: var(--text-primary);
 }
 
 .card {

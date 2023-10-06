@@ -8,9 +8,8 @@ function App() {
 
   return (
     <>
-    {/* <Home /> */}
-    <Welcome />
-    <Bubble count={10} />
+    <Home />
+    <Bubble count={10} /> 
     </>
   )
 }
