@@ -1,15 +1,27 @@
+@import '../App.css';
+
 .bubble{
+    transition: opacity 0.3s;
     position: fixed;
     bottom: -100px;
-    border: 2px solid black;
-    background-color: white;
+    border: 2px solid var(--text-primary);
+    background-color: var(--background);
     border-radius:50%;
-    opacity: 0.7;
-    animation:fly 15s ease-in-out infinite;
+    opacity: 0.2;
+    animation:fly 60s ease-in-out infinite;
   }
 
-  .zoom .bubble {
-    animation: zoomfly 15s ease-in-out infinite;
+  *[data-theme=dark] .bubble {
+    opacity: 0.4;
+  }
+
+  .bubble:hover {
+    opacity: 0.8;
+  }
+
+  .bubble::before {
+    content: url('../assets/code.svg');
+    transform: scale(0.8);
   }
 
   .bubble:nth-child(1){
@@ -17,7 +29,7 @@
     left: 1%;
     height: 30px;
     width: 30px;
-    animation-duration:8s;
+    animation-duration:18s;
   }
   .bubble:nth-child(2){
     z-index: 100;
@@ -25,7 +37,7 @@
     height: 20px;
     width: 20px;
     animation-duration:10s;
-    animation-delay:1s;
+    animation-delay:10s;
   }
   .bubble:nth-child(3){
     z-index: 300;
@@ -33,7 +45,7 @@
     height: 30px;
     width: 30px;
     animation-duration:6s;
-    animation-delay:2s;
+    animation-delay:6s;
   }
   .bubble:nth-child(4){
     z-index: -200 ;
@@ -41,7 +53,7 @@
     height: 40px;
     width: 40px;
     animation-duration:12s;
-    animation-delay:5s;
+    animation-delay:9s;
   }
   .bubble:nth-child(5){
     z-index: -40;
@@ -49,15 +61,15 @@
     height: 30px;
     width: 30px;
     animation-duration:9s;
-    animation-delay:0;
+    animation-delay:15s;
   }
   .bubble:nth-child(6){
     z-index: -1000;
     left: 50%;
-    height: 15px;
-    width: 15px;
+    height: 25px;
+    width: 25px;
     animation-duration:13s;
-    animation-delay:8s;
+    animation-delay:18s;
   }
   .bubble:nth-child(7){
     z-index: 10;
@@ -65,21 +77,21 @@
     height: 40px;
     width: 40px;
     animation-duration:10s;
-    animation-delay:0;
+    animation-delay:10s;
   }
   .bubble:nth-child(8){
     left: 60%;
-    height: 10px;
-    width: 10px;
+    height: 70px;
+    width: 70px;
     animation-duration:14s;
-    animation-delay:5s;
+    animation-delay:35s;
   }
   .bubble:nth-child(9){
     left: 65%;
     height: 20px;
     width: 20px;
     animation-duration:10s;
-    animation-delay:3s;
+    animation-delay:7s;
   }
   .bubble:nth-child(10){
     left: 70%;
@@ -104,19 +116,5 @@
     }
 }
 
-@keyframes zoomfly {
-    0%{
-        bottom: -200px;
-        transform:translateX(0) scale(2);
-      }
-      50%{
-        transform:translateX(100px) scale(2);
-      }
-      
-      100%{
-        bottom: 1080px;
-        transform:translateX(-200px) scale(2);
-      }
-}
 
 /* Credit to @payer 'Water bubbles' Codepen */

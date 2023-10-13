@@ -1,0 +1,50 @@
+@import '../App.css';
+
+.container {
+    padding-top: 1rem;
+    background-color: var(--background);
+    min-height: 100vh;
+    font-size: 16px;
+    background: linear-gradient(0deg, rgba(54, 88, 146, 1), var(--background));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.sectionHeader {
+    margin-top: 4rem;
+}
+
+.sectionLabel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.email span::before {
+    width: calc(12px + 1vw);
+    height: calc(12px + 1vw);
+    content: url('../assets/email-outline.svg');
+}
+
+*[data-theme=dark] .email span::before {
+    filter: invert(1) brightness(1.5)
+}
+
+.email * {
+    margin: 0;
+    padding: 0;
+}
+
+.email:hover {
+
+}
+
+.email {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    max-width: 100%;
+    gap: 0.5rem;
+}

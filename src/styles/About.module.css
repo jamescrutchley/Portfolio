@@ -1,0 +1,50 @@
+@import '../App.css';
+
+* {
+    color: var(--text-primary);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+    animation: 0.3s var(--fadein);
+    padding: 2rem;
+    background-color: var(--background);
+    min-height: 100vh;
+}
+
+.container div:last-child {
+    justify-self: flex-end;
+}
+
+.sectionContainer {
+    width: clamp(40%, 70%, 95%);
+    border-radius: 8px;
+    background-color: transparent;
+    text-align: center;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+}
+
+.sectionContainer p div span {
+    font-size: 16px !important;
+    text-align: center;
+}
+
+.line {
+    margin-bottom: 1rem !important;
+} 
+
+
+@media screen and (min-width: 1200px) {
+    .container p {
+        font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .transition {
+        padding-top: 5rem;
+    }
+  }
