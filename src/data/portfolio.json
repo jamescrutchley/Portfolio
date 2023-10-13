@@ -1,0 +1,47 @@
+{
+    "1": {
+        "Name": "Game of Life",
+        "Description": "A simple implementation of Conway's Game of Life, built with React.",
+        "Details": "src/assets/file-type-css.svg, src/assets/javascript-js.svg",
+        "Images": {
+            "keyword": "game",
+            "urls": ""
+        }
+    },
+    "2": {
+        "Name": "Consumer Goods",
+        "Description": "Mock E-commerce site.\n \nUsers can search for, filter, and browse products, and edit the contents of a viewable cart, which can be accessed from any page.",
+        "Details": "src/assets/react.svg, src/assets/file-type-css.svg, src/assets/javascript-js.svg",
+        "Images": {
+            "keyword": "cart",
+            "urls": "src/assets/portfolio-images/shopping-cart-1.png, src/assets/portfolio-images/shopping-cart-2.png"
+        }
+    },
+    "3": {
+        "Name": "Knight's Travails",
+        "Description": "A variation on the classic 'Knight's Tour' chess problem.\n Given any start and end point, the algorithm finds the shortest path.        ",
+        "Details": "src/assets/file-type-css.svg, src/assets/javascript-js.svg",
+        "Images": {
+            "keyword": "knight",
+            "urls": "src/assets/portfolio-images/knights.png"
+        }
+    },
+    "4": {
+        "Name": "Battleship",
+        "Description": "A player vs bot implementation of the classic strategy game, built with Vanilla JS + Webpack.        ",
+        "Details": "src/assets/react.svg, src/assets/file-type-css.svg, src/assets/javascript-js.svg",
+        "Images": {
+            "keyword": "battleship",
+            "urls": "src/assets/portfolio-images/battleship.png"
+        }
+    },
+    "5": {
+        "Name": "React Design Patterns",
+        "Description": "A series of common React design patterns with notated code and toy examples",
+        "Details": "src/assets/react.svg, src/assets/file-type-css.svg, src/assets/typescript-icon.svg",
+        "Images": {
+            "keyword": "design",
+            "urls": "src/assets/construction-site.svg"
+        }
+    }
+}
