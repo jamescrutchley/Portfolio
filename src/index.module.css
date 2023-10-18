@@ -1,7 +1,6 @@
 /* @import './App.css'; */
 
 html {
-    scroll-behavior: smooth;
 }
 
 :root {
@@ -34,6 +33,9 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+
+  scroll-behavior: smooth;
+
 }
 
 h1 {

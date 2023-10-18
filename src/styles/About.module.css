@@ -4,41 +4,70 @@
     color: var(--text-primary);
 }
 
-.container {
+.aboutContainer {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 3rem;
     align-items: center;
+    justify-content: flex-start;
     animation: 0.3s var(--fadein);
     padding: 2rem;
     background-color: var(--background);
     min-height: 100vh;
 }
 
-.container div:last-child {
+.aboutContainer div:last-child {
     justify-self: flex-end;
 }
 
-.sectionContainer {
-    width: clamp(40%, 70%, 95%);
+.aboutSectionContainer {
+    width: clamp(40%, 75%, 95%);
     border-radius: 8px;
     background-color: transparent;
-    text-align: center;
-    padding: 1rem 1.5rem 1rem 1.5rem;
+    padding: 2rem;
+
+    line-height: 1.5rem;
+    /* filter: hue-rotate(220deg); */
+
+    background-color: var(--background);
+    background-size: cover;
+    /* background-image: url('../assets/fruit-basket-agency-UdeDyN4K7S0-unsplash.jpg'); */
+
 }
 
-.sectionContainer p div span {
+.aboutSectionContainer div span {
     font-size: 16px !important;
     text-align: center;
+    margin-bottom: 0.8rem;
+}
+
+.aboutSectionHeader {
+    margin-bottom: 0;
+    font-size: 2rem;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.aboutSectionHeader::before {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    z-index: -1;
+    left: 0;
+    transform: translateX(10px);
 }
 
 .line {
     margin-bottom: 1rem !important;
 } 
 
+.projectDescription .line {
+    overflow: visible;
+}
+
 
 @media screen and (min-width: 1200px) {
-    .container p {
+    .aboutContainer div {
         font-size: 1rem;
     }
   }
@@ -46,5 +75,12 @@
   @media (max-width: 500px) {
     .transition {
         padding-top: 5rem;
+    }
+    .aboutSectionContainer {
+        width: clamp(60%, 80%, 90%);
+    }
+    .projectDescription {
+        max-width: 100%;
+        /* overflow: visible; */
     }
   }

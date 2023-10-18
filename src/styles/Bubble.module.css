@@ -12,11 +12,15 @@
   }
 
   *[data-theme=dark] .bubble {
-    opacity: 0.4;
+    opacity: 0.5;
   }
 
   .bubble:hover {
     opacity: 0.8;
+  }
+
+  *[data-theme=dark] .bubble::before {
+    filter: invert(1);
   }
 
   .bubble::before {

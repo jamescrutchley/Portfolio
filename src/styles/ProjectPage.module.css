@@ -1,0 +1,141 @@
+@import '../App.css';
+
+html {
+    scroll-behavior: auto;
+}
+
+.page {
+    background-color: var(--background);
+    margin-bottom: 8rem;
+    position: absolute;
+    top: 0;
+
+    scroll-behavior: auto;
+
+    left: 0;
+
+}
+
+.test {
+    color: var(--text-primary);
+}
+
+.container {
+    margin: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.panel {
+    border: 2px solid;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+    margin: 1rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    align-items: center;
+    animation: var(--fadein);
+}
+
+.imageSection {
+    background-color: var(--background-light);
+}
+
+.imageSection img {
+    transition: transform 0.2s ease;
+}
+
+.imageSection img:hover {
+    transform: scale(1.1);
+}
+
+
+.buttonSection button {
+    width: fit-content;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+
+    font-size: 18px;
+    color: var(--text-primary);
+    background-color: var(--root-background);
+}
+
+.buttonSection button:hover {
+    animation: var(--grow);
+    justify-self: flex-start;
+}
+
+.backHome {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    font-size: 20px;
+
+    display: flex;
+    gap: 0.2rem;
+    font-weight: 100;
+
+    border-radius: 8px;
+    background-color: var(--text-primary);
+}
+
+.backHome a {
+    color: var(--background) !important;
+}
+
+
+.backHome::before {
+    content: "<";
+    color: var(--background)
+}
+
+.backHome:hover {
+    animation: var(--grow);
+}
+
+.buttonSection {
+    margin: 2rem 2rem 8rem 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.panel div {
+    background-color: var(--root-background);
+}
+
+.panel:nth-child(odd) .imageSection {
+    order: 2;
+}
+
+.copySection {
+    padding: 1rem;
+
+    font-size: calc(12px + 0.2vw);
+}
+
+.copySection p {
+    background-color: var(--background-light);
+    border-radius: 20px;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+}
+
+
+@media screen and (max-width: 500px) {
+    .panel {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+    }
+    .panel:nth-child(odd) .imageSection {
+        order: initial;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .copySection {
+        font-size: 16px !important;
+    }
+}

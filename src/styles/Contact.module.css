@@ -9,10 +9,13 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    z-index: -1000;
 }
 
 .sectionHeader {
     margin-top: 4rem;
+    padding: 0;
+    margin-bottom: 1rem;
 }
 
 .sectionLabel {
@@ -37,14 +40,23 @@
     padding: 0;
 }
 
-.email:hover {
-
-}
-
 .email {
     align-items: center;
     justify-content: center;
     display: flex;
     max-width: 100%;
     gap: 0.5rem;
+}
+
+.row {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0;
+}
+
+.row * {
+    padding: 0;
+    margin: 0;
 }

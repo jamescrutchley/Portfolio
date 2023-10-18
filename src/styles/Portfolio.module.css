@@ -11,6 +11,22 @@
     font-size: 1rem !important;
 }
 
+ /* h3::before {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    width: 100vw;
+    left: 0;
+    top: 45rem;
+    height: 800px;
+    background-color: var(--background);
+    z-index: -1;
+    border-radius: 100px;
+    opacity: 0.1;
+    mix-blend-mode: lighten;
+    transform: matrix(1, 1, 0, 1, 0, 0);
+} */
+
 .project {
     background: linear-gradient(180deg, rgba(123, 163, 233, 0.4), rgba(255, 255, 255, 0.4));
     justify-content: space-evenly;
@@ -19,7 +35,9 @@
     padding: 2vw;
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s;   
+    position: relative; 
+    overflow: hidden;
 }
 
 
@@ -56,8 +74,32 @@
     " title "
     " desc "
     " detail "
-    " button "
+    " button ";
 }
+
+.contentContainer::before {
+
+}
+
+.mask {
+    width: 300%;
+    height: 400%;
+    top: 0;
+    position: absolute;
+    z-index: -10;
+
+    transform: rotateZ(10deg) translateY(-80vh);
+    overflow: hidden;
+
+    background-size: cover;
+
+    background: url('../assets/fruit-basket-agency-UdeDyN4K7S0-unsplash.jpg');
+    opacity: 0.4;
+}
+
+
+/* Photo by <a href="https://unsplash.com/@fruit_basket?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Fruit Basket Agency</a> on <a href="https://unsplash.com/photos/UdeDyN4K7S0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+   */
 
 
 h4 {
@@ -67,8 +109,48 @@ h4 {
     font-size: 1.5rem;
     width: fit-content;
     justify-self: center;
-    background: linear-gradient(to bottom, var(--text-secondary), rgba(255, 255, 255, 0.2));
 }
+
+h4:hover {
+    animation: var(--grow);
+}
+
+/* h4::before {
+    content: '.';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: var(--text-secondary); 
+    z-index: -10;
+    border-radius: 100px;
+} */
+
+
+/* .project:nth-child(odd)::before {
+    transform: skewY(20deg) translateZ(420px) matrix3d(1, 2, 1, 1, 2, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 800px;
+    background-color: var(--accent);
+    z-index: -90;
+    border-radius: 100px;
+    opacity: 0.2;
+}
+
+.project:nth-child(even)::before {
+    transform: skewY(-20deg) translateZ(40px) matrix3d(1, 2, 1, 1, 2, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 800px;
+    z-index: -90;
+    border-radius: 100px;
+    opacity: 0.2;
+    background-color: var(--accent-two);
+} */
+
+
 
 .seeMore {
     grid-area: button;
@@ -87,6 +169,10 @@ h4 {
     margin: 0.5rem;
 }
 
+.seeMore a {
+    color: var(--background);
+}
+
 .details {
     font-size: calc(0.9rem + 0.1vw);
     background-color: transparent !important;
@@ -97,8 +183,9 @@ h4 {
     justify-self: center;
     margin-bottom: 1rem;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     min-width: 80%;
+    gap: 1vw;
 }
 
 .details img {
@@ -231,7 +318,7 @@ h4 {
 
 
 *[data-theme=dark] .project {
-    background: linear-gradient(180deg, rgba(54, 88, 146, 0.8), rgba(16, 16, 16, 0.5));
+    background: linear-gradient(180deg, var(--background-light), #18212bd4);
     box-shadow: 0px 4px 15px rgba(239, 239, 239, 0.6);
 }
 
