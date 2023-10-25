@@ -20,7 +20,7 @@
                 "img": "src/assets/portfolio-images/shopping-cart-1.png"
             },
             "4": {
-                "copy": "To avoid prop drilling, useContext was used to manage a global 'cart' object that could be edited from multiple locations."
+                "copy": "To avoid prop drilling, useContext was used to manage a global 'cart' object that can be edited from multiple locations."
             },
             "5": {
                     "code": "import CartContext from './CartContext';\nimport { useEffect, useState } from 'react';\n\nfunction CartProvider({ children }) {\n  const [cartArray, setCartArray] = useState([]);\n\n  const addToCart = (product, quant = null) => {\n    if (quant === 0) {\n      const updatedCartArray = cartArray.filter(\n        (item) => item.id !== product.id\n      );\n      setCartArray(updatedCartArray);\n    } else {\n      const index = cartArray.findIndex((item) => item.id === product.id);\n\n      if (index !== -1) {\n        // If the product already exists, update the quantity\n        const updatedCartArray = [...cartArray];\n        updatedCartArray[index] = {\n          ...updatedCartArray[index],\n          quantity: quant,\n        };\n        setCartArray(updatedCartArray);\n      } else {\n        // If the product doesn't exist, add it to the cartArray with quantity\n        setCartArray((prevCart) => [\n          ...prevCart,\n          { ...product, quantity: quant }, // Include quantity directly in the object\n        ]);\n      };\n\n  return (\n    <CartContext.Provider value={{ cartArray, addToCart }}>\n      {children}\n    </CartContext.Provider>\n  );\n}\n\nexport default CartProvider;",
