@@ -15,21 +15,56 @@
 .sectionHeader {
     margin-top: 4rem;
     padding: 0;
-    margin-bottom: 1rem;
+    color: var(--text-primary);
+
+}
+
+.sectionContainer:last-child {
+    margin-bottom: 20vh;
+}
+
+.resumeRow {
+    margin: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+}
+
+.resumeRow a p {
+    margin: 1rem 0rem 0rem 0rem;
+    width: fit-content;
+}
+
+.resumeRow a, .resumeRow p {
+    height: fit-content;
+    margin: 0;
 }
 
 .sectionLabel {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: 2px;
 }
 
-.email span::before {
-    width: calc(12px + 1vw);
-    height: calc(12px + 1vw);
-    content: url('../assets/email-outline.svg');
+.email p {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 2px;
+    color: var(--text-primary);
 }
+
+
+
+/* .email p::before {
+    width: 16px;
+    height: 16px;
+    content: url('../assets/email-outline.svg');
+} */
+
 
 *[data-theme=dark] .email span::before {
     filter: invert(1) brightness(1.5)
@@ -41,9 +76,6 @@
 }
 
 .email {
-    align-items: center;
-    justify-content: center;
-    display: flex;
     max-width: 100%;
     gap: 0.5rem;
 }
@@ -59,4 +91,8 @@
 .row * {
     padding: 0;
     margin: 0;
+}
+
+.resumeRow a:hover {
+    font-weight: bold;
 }

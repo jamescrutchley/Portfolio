@@ -4,6 +4,14 @@ html {
     scroll-behavior: auto;
 }
 
+h1 {
+    font-size: 40px;
+    margin: 5rem 0rem 2rem 0em;
+
+    animation: dropDown 0.3s ease-in-out;
+    grid-area: heading;
+}
+
 .page {
     background-color: var(--background);
     margin-bottom: 8rem;
@@ -13,6 +21,7 @@ html {
     scroll-behavior: auto;
 
     left: 0;
+    overflow: hidden;
 
 }
 
@@ -22,35 +31,157 @@ html {
 
 .container {
     margin: 1rem;
+    margin-bottom: 5rem;
 
+    max-height: fit-content;
+    max-width: 100vw;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.mask:nth-child(1) {
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    z-index: 0;
+    transform: matrix(1, 1, 2, 1, 4, 5) translateY(10vh);    overflow: hidden;
+    background-size: cover;
+    background: url('/src/assets/fruit-basket-agency-UdeDyN4K7S0-unsplash.jpg');
+    opacity: 0.2;
+}
+
+.mask:nth-child(2) {
+    height: 10px;
+    width: 11px;
+    position: absolute;
+    z-index: 0;
+    transform: rotateZ(336deg) translateY(-51vh)  scale(190) skewY(100deg) skewY(200deg) matrix(1, 1, 2, 3, 3, 3);
+    overflow: hidden;
+    background-size: cover;
+    background: url('/src/assets/fruit-basket-agency-UdeDyN4K7S0-unsplash.jpg');
+    opacity: 0.2;
+    filter: hue-rotate(177deg);
+}
+
+.mask:nth-child(3) {
+    height: 10px;
+    width: 11px;
+    position: absolute;
+    z-index: 0;
+    transform: rotateZ(0deg) translateY(109vh)  scale(190) skewY(100deg) skewY(200deg) matrix(1, 1, 2, 3, 3, 3);    overflow: hidden;
+    background-size: cover;
+    background: url('/src/assets/fruit-basket-agency-UdeDyN4K7S0-unsplash.jpg');
+    opacity: 0.15;
+    filter: hue-rotate(315deg);
+}
+
+.mask:nth-child(4) {
+    height: 33px;
+    width: 3px;
+    position: absolute;
+    z-index: 0;
+    transform: rotateZ(312deg) translateY(-34vh)  scale(190) skewY(100deg) skewY(200deg) matrix(1, 1, 2, 3, 3, 3);
+    overflow: hidden;
+    background-size: cover;
+    background: url('/src/assets/fruit-basket-agency-UdeDyN4K7S0-unsplash.jpg');
+    opacity: 0.1;
+    filter: hue-rotate(315deg);
+}
+
+@keyframes dropDown {
+    0% {
+        transform: translateY(-100px)
+    }
+    60% {
+        transform: translateY(15px);
+    }
+    70% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 
 .panel {
-    border: 2px solid;
+    border: 2px solid rgb(33 115 170);;
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
     margin: 1rem;
+    padding: 0.5rem;
+    max-width: 90vw;
+    width: fit-content;
+    z-index: 1;
+    background-color: var(--background);
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    animation: var(--slowFade);
+
+    transition: background 0.3s;
+    /* display: grid;
+    grid-template-columns: auto auto; */
     
+
+    display: flex;
     align-items: center;
-    animation: var(--fadein);
+
+    height: max-content;
+}
+
+.panel * {
+    transition: background 0.3s;
+}
+
+*[data-theme=dark] .panel:hover {
+    box-shadow: 0px 4px 12px rgba(167, 246, 255, 0.8);
+}
+
+.panel:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+
+
+*[data-theme=dark] .panel {
+    border: 2px solid var(--accent);
 }
 
 .imageSection {
-    background-color: var(--background-light);
+    background-color: transparent;
+    width: max-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .imageSection img {
-    transition: transform 0.2s ease;
+    transition: opacity 0.4s ease;
+    margin: 1rem;
+    aspect-ratio: initial;
+
+    /* width: clamp(40vw, 50vw, 80vw); */
+
+    width: auto;
+    height: auto;
+
+    max-width: 60vw;
+    max-height: 70vh;
+
 }
 
-.imageSection img:hover {
-    transform: scale(1.1);
+.copySection p {
+    color: var(--text-primary);
+    line-break: loose;
+}
+
+.imageSection img:hover, .copySection p:hover {
+    animation: var(--subtleGrow);
 }
 
 
@@ -82,7 +213,7 @@ html {
     background-color: var(--text-primary);
 }
 
-.backHome a {
+.backHome *, .backHome {
     color: var(--background) !important;
 }
 
@@ -97,15 +228,15 @@ html {
 }
 
 .buttonSection {
-    margin: 2rem 2rem 8rem 2rem;
+    margin: 0.5rem;
     display: flex;
     gap: 1rem;
     justify-content: center;
 }
 
-.panel div {
+/* .panel div {
     background-color: var(--root-background);
-}
+} */
 
 .panel:nth-child(odd) .imageSection {
     order: 2;
@@ -113,24 +244,39 @@ html {
 
 .copySection {
     padding: 1rem;
-
     font-size: calc(12px + 0.2vw);
 }
 
 .copySection p {
-    background-color: var(--background-light);
     border-radius: 20px;
     padding: 1rem 0.5rem 1rem 0.5rem;
+
+    font-size: 16px;
+    min-width: 20vw;
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     .panel {
-        grid-template-columns: none;
-        grid-template-rows: 1fr 1fr;
+        flex-direction: column;
+    }
+    .copySection {
+        width: auto;
     }
     .panel:nth-child(odd) .imageSection {
         order: initial;
+    }
+    /* .imageSection img {
+        max-width: 80vw;
+        max-height: 60vh;
+        margin: 1rem;
+    } */
+    .imageSection {
+        max-width: max-content;
+    }
+    .imageSection img {
+        margin: 2px;
+        max-width: 70vw;
     }
 }
 
@@ -138,4 +284,45 @@ html {
     .copySection {
         font-size: 16px !important;
     }
+}
+
+
+
+
+
+
+
+
+
+
+.copySection * span {
+    padding-left: 1rem;
+}
+
+.codeTitle {
+    color: var(--text-primary);
+}
+
+.highlight {
+    position: relative;
+    border-radius: 8px;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+.codeSection {
+    padding: 0.5rem;
+}
+
+.codeSection pre {
+    margin: 0;
+    padding: 0;
+}
+
+/* .codeSection pre .highlight > .hljs-constructor > .hljs-constructor > .hljs-constructor  {
+    color: var(--text-primary);
+} */
+
+.codeSection .hljs-constructor {
+    color: white !important;
 }

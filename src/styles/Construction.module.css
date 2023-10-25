@@ -1,0 +1,65 @@
+@import '../App.css';
+
+
+.constructionPage {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    padding: 1rem;
+
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+    background-color: var(--background);
+}
+
+.constructionPage span, .constructionPage p {
+    color: var(--text-primary);
+    z-index: 3;
+}
+
+.img {
+    animation: none;
+    transition: 0.3s ease transform;
+    max-width: 20vw;
+    background-image: url(../assets/fruit-basket-agency-UdeDyN4K7S0-unsplash.jpg);
+    border-radius: 200px;
+    z-index: 0;
+}
+
+.img:hover {
+    transform: scale(1.1);
+}
+
+.goBack {
+    border-radius: 18px;
+            grid-area: button;
+        z-index: 10;
+        color: var(--text-primary);
+    
+        font-size: calc(0.8rem + 0.4vw);
+        padding: calc(0.3rem + 0.2vw) calc(0.6rem + 0.2vw) calc(0.3rem + 0.2vw) calc(0.6rem + 0.2vw);
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        margin: 0.5rem;
+        font-weight: 100;
+}
+
+.goBack:hover {
+    font-weight: bold;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

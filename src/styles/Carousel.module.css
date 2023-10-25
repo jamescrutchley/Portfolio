@@ -143,6 +143,6 @@
   @media screen and (max-width: 500px) {
     .carouselContainer:hover {
         position: relative;
-        transform: scale(1.15);
+        transform: scale(1.05);
       }
 }

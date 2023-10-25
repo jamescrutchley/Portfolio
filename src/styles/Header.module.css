@@ -3,12 +3,12 @@
 
 * {
     box-sizing: border-box;
-    color: var(--text-primary);
+    /* color: var(--text-primary); */
 }
 
 .header {
     transition: background 0.2s;
-    background: linear-gradient(180deg, rgba(54, 88, 146, 1), var(--background));    display: grid;
+    background: linear-gradient(180deg, rgb(71, 115, 190), var(--background));    display: grid;
     min-height: 100vh;
 
     grid-template-rows: 12vh auto auto;
@@ -19,7 +19,12 @@
     ;
 }
 
+*[data-theme=dark] .header {
+    background: linear-gradient(180deg, rgb(48, 77, 128), var(--background));    display: grid;
+}
+
 .links {
+    z-index: 99;
     grid-area: links;
     display: flex;
     flex-direction: row;
@@ -149,8 +154,9 @@ transform: scale(1);
 
 
 .sidebar ul li {
-opacity: 0.7;
+opacity: 0.8;
 color: var(--text-primary);
+filter: contrast(150%);
 }
 
 .sidebar ul li:hover {
@@ -163,17 +169,39 @@ h1 {
     color: var(--text-primary);
     font-size: 10vw;
     letter-spacing: -3px;
+    z-index: 100;
+    position: relative;
+}
+
+
+@keyframes float {
+    20% {  
+        transform: scaleY(1.01) scaleX(0.99) translateY(2px) translateX(0px);
+    }
+    50% {
+        transform: scaleY(0.99) scaleX(1.01) translateY(-2px) translateX(1px);
+    }
+    80% {
+        transform: scaleY(1.01) scaleX(0.99) translateY(2px) translateX(-1px);
+    }
 }
 
 .desc {
     text-transform: lowercase;
     word-spacing: -2px;
+    animation: float infinite 15s;
+    z-index: 100;
+    position: relative;
+        color: var(--text-primary);
+
 }
 
 .transition {
     width: fit-content;
     justify-self: center;
     align-self: center;
+    z-index: 100;
+    position: relative;
     margin-top: -1rem
 }
 

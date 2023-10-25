@@ -1,10 +1,8 @@
 @import '../App.css';
 
-* {
-    color: var(--text-primary);
-}
-
 .aboutContainer {
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -13,7 +11,8 @@
     animation: 0.3s var(--fadein);
     padding: 2rem;
     background-color: var(--background);
-    min-height: 100vh;
+    min-height: 90vh;
+    z-index: -1000;
 }
 
 .aboutContainer div:last-child {
@@ -25,14 +24,10 @@
     border-radius: 8px;
     background-color: transparent;
     padding: 2rem;
+    position: relative;
 
     line-height: 1.5rem;
-    /* filter: hue-rotate(220deg); */
-
-    background-color: var(--background);
-    background-size: cover;
-    /* background-image: url('../assets/fruit-basket-agency-UdeDyN4K7S0-unsplash.jpg'); */
-
+    overflow: hidden;
 }
 
 .aboutSectionContainer div span {
@@ -46,15 +41,7 @@
     font-size: 2rem;
     font-family: sans-serif;
     position: relative;
-}
-
-.aboutSectionHeader::before {
-    position: absolute;
-    width: 100%;
-    height: 10%;
-    z-index: -1;
-    left: 0;
-    transform: translateX(10px);
+    color: var(--text-primary);
 }
 
 .line {
@@ -64,6 +51,56 @@
 .projectDescription .line {
     overflow: visible;
 }
+/* 
+.aboutContainer .mask {
+    height: 168vh;
+    width: 26vw;
+    position: absolute;
+    transform: matrix(1, 1, 2, 1, 4, 5) translateY(10vh);
+    filter: hue-rotate(207deg);
+    opacity: 0.2;
+    background-size: cover;
+    background: url('/src/assets/fruit-basket-agency-UdeDyN4K7S0-unsplash.jpg');
+}
+
+.aboutContainer .mask:nth-child(2) {
+    height: 125vh;
+    width: 110vw;
+    position: absolute;
+    transform: matrix(1, 1, 2, 1, 4, 5) translateY(84vh);
+    filter: hue-rotate(246deg);
+    opacity: 0.2;
+    background-size: cover;
+    background: url('/src/assets/fruit-basket-agency-UdeDyN4K7S0-unsplash.jpg');
+}
+
+.aboutContainer .mask:nth-child(3) {
+    height: 125vh;
+    width: 95vw;
+    right: 0;
+    top: 0;
+    position: absolute;
+    transform: matrix(0, 1, 1, 4, 2, 3) translateY(-8vh) rotate(141deg);
+    filter: hue-rotate(162deg);
+    opacity: 0.2;
+    background-size: cover;
+    background: url('/src/assets/fruit-basket-agency-UdeDyN4K7S0-unsplash.jpg');}
+
+*[data-theme=dark] .aboutContainer .mask {
+    opacity: 0.05;
+}
+
+.wrapper .mask {
+    position: absolute;
+    width: 100vw;
+    height: 166vh;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-color: pink;
+    opacity: 0.5;
+    transform: translate(0px, 79vh);
+} */
 
 
 @media screen and (min-width: 1200px) {
@@ -77,7 +114,9 @@
         padding-top: 5rem;
     }
     .aboutSectionContainer {
-        width: clamp(60%, 80%, 90%);
+        width: clamp(60%, 90%, 95%);
+        padding-top: 0.2rem;
+        padding: 0.5rem;
     }
     .projectDescription {
         max-width: 100%;

@@ -34,7 +34,7 @@
     display: flex;
     padding: 2vw;
     border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.35);
     transition: box-shadow 0.2s;   
     position: relative; 
     overflow: hidden;
@@ -42,7 +42,7 @@
 
 
 .project:hover {
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.7);
 }
 
 .imageContainer {
@@ -77,9 +77,6 @@
     " button ";
 }
 
-.contentContainer::before {
-
-}
 
 .mask {
     width: 300%;
@@ -97,6 +94,12 @@
     opacity: 0.4;
 }
 
+.mask:nth-child(2) {
+        transform: rotateZ(289deg) translateY(-40vh) scale(2);
+        filter: hue-rotate(196deg);
+        opacity: 0.2;
+}
+
 
 /* Photo by <a href="https://unsplash.com/@fruit_basket?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Fruit Basket Agency</a> on <a href="https://unsplash.com/photos/UdeDyN4K7S0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
    */
@@ -109,7 +112,9 @@ h4 {
     font-size: 1.5rem;
     width: fit-content;
     justify-self: center;
+    color: var(--text-primary);
 }
+
 
 h4:hover {
     animation: var(--grow);
@@ -157,8 +162,6 @@ h4:hover {
     z-index: 10;
     background-color: var(--text-primary);
     color: var(--background);
-    justify-self: flex-end;
-    align-self: flex-end;
 
     font-size: calc(0.8rem + 0.4vw);
     padding: calc(0.3rem + 0.2vw) calc(0.6rem + 0.2vw) calc(0.3rem + 0.2vw) calc(0.6rem + 0.2vw);
@@ -169,8 +172,11 @@ h4:hover {
     margin: 0.5rem;
 }
 
-.seeMore a {
+.contentContainer a {
+    text-align: right;
+    display: flex;
     color: var(--background);
+    justify-content: flex-end ;
 }
 
 .details {
@@ -206,7 +212,7 @@ h4:hover {
     filter: invert(2);
 }
 
-.seeMore:hover {
+.seeMore:hover, .seeMore:hover a {
     animation: var(--grow);
 }
 
@@ -239,6 +245,7 @@ h4:hover {
     font-size: 14px;
     display: block;
     text-align: left;
+    width: 100%;
 }
 
 /* .lastLine {
@@ -274,6 +281,7 @@ h4:hover {
     .project {
         gap: 0.5rem;
         padding: 0rem 0.5rem 0rem 0.5rem;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
     }
     .gallery {
         grid-template-columns: auto; 
@@ -291,10 +299,7 @@ h4:hover {
     .imageContainer img {
         width: clamp(80%, 95%, 100%);
     }
-    .seeMore {
-    }
-    .projectDescription {
-        max-height: 30vh;
+    .projectDescription:not(.aboutContainer *) {
         text-overflow: ellipsis;
         overflow: hidden;
         max-width: 100%;
@@ -315,7 +320,17 @@ h4:hover {
     }
 }
 
+.sectionHeader {
+    color: var(--text-primary);
+}
 
+.dateSpan {
+    position: absolute;
+    font-size: 10px;
+    width: fit-content;
+    height: fit-content;
+white-space: nowrap;
+}
 
 *[data-theme=dark] .project {
     background: linear-gradient(180deg, var(--background-light), #18212bd4);
