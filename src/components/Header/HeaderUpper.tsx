@@ -1,6 +1,11 @@
 import styles from '../../styles/Header.module.css';
+import { FunctionComponent } from 'react';
 
-const HeaderUpper = ({toggle}) => {
+interface Toggle {
+    toggle: () => void
+}
+
+const HeaderUpper: FunctionComponent<Toggle> = ({toggle}) => {
     return (
         <div className={styles.logo}>
           <button className="darkTheme" onClick={() => toggle()}></button>

@@ -1,18 +1,6 @@
 
-// import fs from 'fs'
-// const folderPath = '/path/to/your/folder';
 
-// export const filterImages = () => {
-//     fs.readdir(folderPath, (err, files) => {
-//         if (err) {
-//           console.error('Error:', err);
-//         } else {
-//           console.log('Filenames in the folder:', files);
-//         }
-//       });
-// }
-
-export const filterImages = (urls) => {
+export const filterImages = (urls: string) => {
     try {
         return urls.split(',')
     } catch {
@@ -20,7 +8,7 @@ export const filterImages = (urls) => {
     }
 }
 
-export const produceImageCollection = (arr, className) => {
+export const produceImageCollection = (arr: string[], className: string) => {
     return arr.map((url, index) => {
         return (
         <img key={index} src={url} alt="icon" className={className}/>

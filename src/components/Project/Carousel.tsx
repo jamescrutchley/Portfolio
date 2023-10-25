@@ -1,16 +1,25 @@
 import styles from "../../styles/Carousel.module.css";
 import { useEffect, useState } from 'react';
-import img from '../../assets/portfolio-images/shopping-cart-1.png';
 import { useInterval } from 'usehooks-ts';
-import {filterImages} from '../../helpers/filterImages.js'
+import {filterImages} from '../../helpers/filterImages.js';
+import { FunctionComponent } from 'react';
 
-const Carousel = ({ images }) => {
+interface CarouselProps {
+    images: string;
+}
+
+type ImageType = string;
+
+
+const Carousel: FunctionComponent<CarouselProps> = ({ images }) => {
     const [active, setActive] = useState(0);
-    const [imagesArray, setImagesArray] = useState([]);
+    const [imagesArray, setImagesArray] = useState<ImageType[]>([]);
 
     useEffect(() => {
-        const urlArray = filterImages(images);
-        setImagesArray(urlArray);
+        const urlArray: ImageType[] | undefined = filterImages(images);
+        if (urlArray !== undefined) {
+            setImagesArray(urlArray);
+        }
     }, [images]);
 
 

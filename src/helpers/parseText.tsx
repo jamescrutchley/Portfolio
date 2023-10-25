@@ -1,6 +1,6 @@
 import styles from '../styles/Portfolio.module.css'
 
-export const parseText = (copy) => {
+export const parseText = (copy: string) => {
     // limit to 30 words.
   let clipped = copy.split(" ").slice(0).join(" ");
   clipped += `\n`;

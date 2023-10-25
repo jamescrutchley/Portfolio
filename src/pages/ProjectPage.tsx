@@ -1,13 +1,19 @@
 import styles from "../styles/ProjectPage.module.css";
-import img from "../assets/construction-site.svg";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ScrollToTop from "../hooks/ScrollToTop";
 import { useEffect } from "react";
-import { parseText } from "../helpers/parseText";
-import maskStyle from '../styles/Portfolio.module.css'
 
 import Highlight from "react-highlight";
+
+export interface ProjectItem {
+    img?: string;
+    copy?: string;
+    code?: string;
+    title?: string;
+    website?: string;
+    github?: string;
+  }
 
 export const ProjectPage = () => {
   const location = useLocation();
@@ -16,9 +22,9 @@ export const ProjectPage = () => {
 
   useEffect(() => console.log(data), [data]);
 
-  const panels = Object.values(details).map((item, index) => {
+  const panels = Object.values(details as ProjectItem).map((item, index) => {
     console.log(item.img);
-    let urlString = item.img ? `/${item.img.toString()}` : null;
+    const urlString = item.img ? `/${item.img.toString()}` : '';
 
     return (
       <div key={index} className={styles.panel}>
@@ -35,7 +41,7 @@ export const ProjectPage = () => {
         {item.code && (
           <div className={styles.codeSection}>
             <p className={styles.codeTitle}>{item.title}</p>
-            <Highlight className={styles.highlight} language="javascript">
+            <Highlight className={styles.highlight}>
               {item.code}
             </Highlight>
           </div>
