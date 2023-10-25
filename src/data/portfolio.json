@@ -2,22 +2,22 @@
     "1": {
         "Name": "Consumer Goods",
         "Description": "Mock E-commerce site.\n \nUsers can browse, filter, and search products, and edit the contents of their cart.",
-        "Tech": "src/assets/react.svg, src/assets/file-type-css.svg, src/assets/javascript-js.svg",
+        "Tech": "/react.svg, /file-type-css.svg, /javascript-js.svg",
         "Images": {
             "keyword": "cart",
-            "urls": "src/assets/portfolio-images/shopping-cart-1.png, src/assets/portfolio-images/shopping-cart-2.png"
+            "urls": "/shopping-cart-1.png, /shopping-cart-2.png"
         },
         "date": "Sep 2023",
         "details": {
             "1": {
-                "img": "src/assets/portfolio-images/shopping-cart-3.png",
+                "img": "../../shopping-cart-3.png",
                 "copy":  "Mock E-commerce site.\n \nUsers can search, browse and filter products, and edit the contents of a viewable cart, which can be accessed from any page."
             },
             "2": {
-                "img": "src/assets/portfolio-images/shopping-cart-2.png"
+                "img": "../../shopping-cart-2.png"
             },
             "3": {
-                "img": "src/assets/portfolio-images/shopping-cart-1.png"
+                "img": "../../shopping-cart-1.png"
             },
             "4": {
                 "copy": "To avoid prop drilling, useContext was used to manage a global 'cart' object that can be edited from multiple locations."
@@ -39,10 +39,10 @@
     "2": {
         "Name": "Battleship",
         "Description": "A player vs bot implementation of the classic two player strategy game. \nBuilt with Vanilla JS & Webpack.        ",
-        "Tech": "src/assets/react.svg, src/assets/file-type-css.svg, src/assets/javascript-js.svg",
+        "Tech": "/react.svg, /file-type-css.svg, /javascript-js.svg",
         "Images": {
             "keyword": "battleship",
-            "urls": "src/assets/portfolio-images/battleship.png"
+            "urls": "/battleship.png"
         },
         "date": "July 2023",
         "details": {
@@ -50,13 +50,13 @@
                 "copy":  "A vanilla JS implementation of the popular board game ‘Battleship’."
             },
             "2": {
-                "img": "src/assets/portfolio-images/battleship.png"
+                "img": "../../battleship.png"
             },
             "3": {
                 "copy": "The logic of the game is built around a handful of simple objects: Ship, Gameboard, Player, and so on. The player and the bot both receive a 'Gameboard' which are able to receive attacks, place ships, and report on their current status. Gameplay proceeds via a loop in which methods are called when appropriate."
             },
             "4": {
-                "copy": "The main rationale behind this project was hands-on experience in TDD, ‘Test Driven Development’ (specifically the ‘red - green - refactor’ approach). Using the Jest testing framework, tests were set up for the key game functionalities, and these tests then informed the development process."
+                "copy": "The main rationale behind this project was hands-on experience in Test Driven Development (specifically the ‘red - green - refactor’ approach). Using the Jest testing framework, tests were set up for the key game functionalities, and these tests then informed the development process."
             },
             "5": {
                 "title": "A test describing the 'autoplace method'. When the bot places two ships of size 2 and 5, respectively, 7 'spaces' on the bot's grid should be subsequently occupied.",
@@ -71,10 +71,10 @@
     "3": {
         "Name": "Knight's Travails",
         "Description": "A variation on the classic 'Knight's Tour' chess problem.\n Given any start and end point, the algorithm finds the shortest path.        ",
-        "Tech": "src/assets/file-type-css.svg, src/assets/javascript-js.svg",
+        "Tech": "/file-type-css.svg, /javascript-js.svg",
         "Images": {
             "keyword": "knight",
-            "urls": "src/assets/portfolio-images/knights.png"
+            "urls": "/knights.png"
         },
         "date": "2023",
         "details": {
@@ -82,7 +82,7 @@
                 "copy":  "Knight's Travails was part of a larger course on basic algorithms, and provided hands-on experience thinking in terms of algorithms/data structures."
             },
             "2": {
-                "img": "src/assets/portfolio-images/knights.png"
+                "img": "../../knights.png"
             },
             "3": {
                 "copy": "Originally just a JS script, I added a visual and interactive element. Under the hood, the chess board is represented by a ‘Graph’ class. A ‘travail’ method on the graph class is called when the user selects an initial and destination position for the knight, which performs a breadth-first search to find the shortest possible path to the destination."
@@ -103,10 +103,10 @@
     "4": {
         "Name": "Game of Life",
         "Description": "A simple implementation of Conway's Game of Life, built with React.",
-        "Tech": "src/assets/file-type-css.svg, src/assets/javascript-js.svg",
+        "Tech": "/file-type-css.svg, /javascript-js.svg",
         "Images": {
             "keyword": "game",
-            "urls": "src/assets/portfolio-images/game-2.png, src/assets/portfolio-images/game-3.png, src/assets/portfolio-images/game-4.png"
+            "urls": "/game-2.png, /game-3.png, /game-4.png"
         },
         "date": "2022",
         "details": {
@@ -114,7 +114,7 @@
                 "copy":  "An early foray into React. The game itself is simple: Cellular 'life' propagates on a 2D grid according to a handful of simple rules. These rules determine the evolution of life on the grid over time."
             },
             "2": {
-                "img": "src/assets/portfolio-images/game.png"
+                "img": "../../game.png"
             },
             "3": {
                 "title": "The game's logic is largely contained within a 'Game' component with a 'grid' state, capturing the current configuration of cellular life. User interaction is also managed via the states shown below:",
@@ -133,10 +133,10 @@
         "Name": "React Design Patterns",
         "date": "",
         "Description": "A series of common React design patterns with notated code and toy examples",
-        "Tech": "src/assets/react.svg, src/assets/file-type-css.svg, src/assets/typescript-icon.svg",
+        "Tech": "/react.svg, /file-type-css.svg, /typescript-icon.svg",
         "Images": {
             "keyword": "design",
-            "urls": "src/assets/construction-site.svg"
+            "urls": "/construction-site.svg"
         }
     }
 }
