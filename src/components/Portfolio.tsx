@@ -17,7 +17,9 @@ export const Portfolio = () => {
         images={project.Images.urls}
         title={project.Name}
         description={project.Description}
-        details={project.Details}
+        tech={project.Tech}
+        details={project.details}
+        date={project.date}
       />
     );
   })

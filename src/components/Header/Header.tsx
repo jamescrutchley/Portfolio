@@ -22,7 +22,7 @@ export const Header: FunctionComponent<HeaderProps> = ({ toggle }) => {
               <a href="#contact">Contact</a>
             </li>
             <li>
-              <a href="">Resume</a>
+              <a href="#resume">Resume</a>
             </li>
           </ul>
         </div>
