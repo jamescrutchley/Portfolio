@@ -131,6 +131,7 @@
     },
     "5": {
         "Name": "React Design Patterns",
+        "date": "",
         "Description": "A series of common React design patterns with notated code and toy examples",
         "Tech": "src/assets/react.svg, src/assets/file-type-css.svg, src/assets/typescript-icon.svg",
         "Images": {

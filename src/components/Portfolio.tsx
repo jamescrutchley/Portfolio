@@ -1,13 +1,36 @@
 import styles from "../styles/Portfolio.module.css";
 import data from "../data/portfolio.json";
-import img from "../assets/portfolio-images/shopping-cart-1.png";
-import img2 from "../assets/portfolio-images/shopping-cart-2.png";
 import Project from "./Project/Project";
-import { useEffect } from "react";
+
+interface ProjectData {
+    [projectId: string]: {
+      Name: string;
+      Description: string;
+      Tech: string;
+      Images: {
+        keyword: string;
+        urls: string;
+      };
+      date: string;
+      details?: {
+        [detailId: string]: {
+          img?: string; // 'img' is optional
+          copy?: string;
+          code?: string;
+          title?: string;
+          website?: string;
+          github?: string;
+        };
+      };
+    };
+  }
+  
+  // Assuming 'data' has this type
+
 
 export const Portfolio = () => {
 
-    const projects = data;
+    const projects: ProjectData = data;
 
  const gallery = Object.keys(projects).map((projectId) => {
     const project = projects[projectId];

@@ -1,11 +1,12 @@
 import styles from "../../styles/Header.module.css";
 import { Transition } from "../Transition";
+import { FunctionComponent } from 'react';
 
 interface HeaderProps {
   toggle: () => void;
 }
 
-export const Header: FunctionComponent<HeaderProps> = ({ toggle }) => {
+export const Header: FunctionComponent<HeaderProps> = () => {
   return (
     <header className={styles.header}>
       <div className={styles.links}>
