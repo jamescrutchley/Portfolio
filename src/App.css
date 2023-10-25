@@ -1,43 +1,49 @@
 :root {
-    --root-background: linear-gradient(from top, #f4fcff, rgba(156, 211, 255, 0.592)); 
-    --background: #f4fcff;
-    --text-primary: #23313f;
-    --text-secondary: #517087;
-    --fadein: 0.3s fadein ease;
-    --shuffleRight: 0.3s shuffleRight ease-in;
-    --grow: 0.3s grow ease;
-    --accent: rgb(168, 214, 245);
-    --accent-two: rgb(218, 254, 255);
-  }
-  [data-theme=dark] {
-    --root-background: var(--background);
-    --background: #2f4255;
-    --background-light: #3a6085;
-    --text-primary: #dbe0e2;
-    --text-secondary: #6f96b5;
-  }
+  --root-background: linear-gradient(
+    from top,
+    #f4fcff,
+    rgba(156, 211, 255, 0.592)
+  );
+  --background: #f4fcff;
+  --text-primary: #23313f;
+  --text-secondary: #517087;
+  --fadein: 0.3s fadein ease;
+  --slowFade: 0.8s fadein ease;
+  --shuffleRight: 0.3s shuffleRight ease-in;
+  --grow: 0.3s grow ease;
+  --subtleGrow: 0.3s subtleGrow ease;
+  --accent: rgb(168, 214, 245);
+  --accent-two: rgb(218, 254, 255);
+}
+[data-theme="dark"] {
+  --root-background: var(--background);
+  --background: #2f4255;
+  --background-light: #3a6085;
+  --text-primary: #dbe0e2;
+  --text-secondary: #6f96b5;
+}
 
-  .sectionHeader {
-    font-size: 2rem;
-    font-family: sans-serif;
+.sectionHeader {
+  font-size: 2rem;
+  font-family: sans-serif;
 }
 
 body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
-  
+
 #root {
+  width: 100vw;
   margin: 0 auto;
   padding: 0 auto;
   text-align: center;
   background-color: var(--root-background);
   color: var(--text-primary);
 }
-
 
 /* .logo {
   height: 6em;
@@ -59,34 +65,46 @@ body {
 }
 
 @keyframes grow {
-    0% {
-transform: scale(1.1);
-    }
-    50% {
-transform: scale(0.95);
-    }
-    100% {
-transform: scale(1);
-    }
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-@keyframes fadein {
+@keyframes subtleGrow {
     0% {
-        opacity: 0;
+      transform: scale(1.04);
+    }
+    50% {
+      transform: scale(0.97);
     }
     100% {
-        opacity: 1;
+      transform: scale(1);
     }
+  }
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes shuffleRight {
-    0% {
-        transform: translateX(-50vw);
-    }
-    100% {
-        transform: translateX(0vw);
-    }
+  0% {
+    transform: translateX(-50vw);
   }
+  100% {
+    transform: translateX(0vw);
+  }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
@@ -95,13 +113,13 @@ transform: scale(1);
 }
 
 @media screen and (min-width: 1200px) {
-    * {
-        font-size: 1.2rem;
-    }
+  * {
+    font-size: 1.2rem;
+  }
 }
 
 a {
-    color: var(--text-primary);
+  color: var(--text-primary);
 }
 
 .card {
@@ -110,4 +128,73 @@ a {
 
 .read-the-docs {
   color: #888;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #9b94a5b4;
+}
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute,
+.hljs-regexp,
+.hljs-link,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #ffffff;
+}
+.hljs-number,
+.hljs-meta,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params {
+  color: #eb9071;
+}
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet {
+  color: rgb(233, 233, 3);
+}
+.hljs-title,
+.hljs-section {
+  color: greenyellow;
+}
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #5ad4e7;
+}
+.hljs-deletion,
+.hljs-addition {
+  color: #19171c;
+  display: inline-block;
+  width: 100%;
+}
+.hljs-deletion {
+  background-color: #be4678;
+}
+.hljs-addition {
+  background-color: #42dede;
+}
+.hljs-function {
+    color:rgb(239, 242, 157);
+}
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #19171c;
+  color: #dfdedf;
+  padding: 0.5em;
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: bold;
+}
+.hljs-attr {
+    color: greenyellow;
 }
