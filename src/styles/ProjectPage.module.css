@@ -278,6 +278,14 @@ h1 {
         margin: 2px;
         max-width: 70vw;
     }
+    .highlight {
+        position: relative;
+        border-radius: 8px;
+        text-align: left;
+        padding: 0.2rem;
+        max-width: 80vw;
+        font-size: 10px;
+    }
 }
 
 @media screen and (max-width: 1200px) {
