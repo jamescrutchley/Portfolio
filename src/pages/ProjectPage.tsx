@@ -2,7 +2,6 @@ import styles from "../styles/ProjectPage.module.css";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ScrollToTop from "../hooks/ScrollToTop";
-import { useEffect } from "react";
 
 import Highlight from "react-highlight";
 
@@ -20,10 +19,7 @@ export const ProjectPage = () => {
   const { data } = location.state;
   const { details } = location.state;
 
-  useEffect(() => console.log(data), [data]);
-
   const panels = Object.values(details as ProjectItem).map((item, index) => {
-    console.log(item.img);
     const urlString = item.img ? `/${item.img.toString()}` : '';
 
     return (

@@ -14,7 +14,7 @@ interface ProjectData {
       date: string;
       details?: {
         [detailId: string]: {
-          img?: string; // 'img' is optional
+          img?: string; 
           copy?: string;
           code?: string;
           title?: string;
@@ -25,8 +25,6 @@ interface ProjectData {
     };
   }
   
-  // Assuming 'data' has this type
-
 
 export const Portfolio = () => {
 
