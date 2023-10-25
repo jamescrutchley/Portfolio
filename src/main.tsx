@@ -5,6 +5,8 @@ import "./index.module.css";
 import { ProjectPage } from "./pages/ProjectPage.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./pages/Home.tsx";
+import { Welcome } from "./components/Welcome.tsx"
+import UnderConstruction from "./pages/UnderConstruction.tsx";
 
 const router = createBrowserRouter([
   {
@@ -12,12 +14,16 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "project-page",
+        path: "project/:titleString",
         element: <ProjectPage />,
       },
       {
         path: "",
         element: <Home />
+      },
+      {
+        path: "project/under-construction",
+        element: <UnderConstruction /> 
       }
     ],
   },
