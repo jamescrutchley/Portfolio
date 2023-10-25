@@ -1,9 +1,6 @@
 import "./App.css";
-import { Welcome } from "./components/Welcome";
 import { Bubble } from "./components/Bubble";
 import { useState } from "react";
-import { Home } from "./pages/Home";
-import { ProjectPage } from "./pages/ProjectPage";
 import HeaderUpper from "./components/Header/HeaderUpper";
 import { Outlet } from 'react-router-dom'
 import styles from './styles/About.module.css';

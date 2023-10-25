@@ -5,7 +5,6 @@ import "./index.module.css";
 import { ProjectPage } from "./pages/ProjectPage.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./pages/Home.tsx";
-import { Welcome } from "./components/Welcome.tsx"
 import UnderConstruction from "./pages/UnderConstruction.tsx";
 
 const router = createBrowserRouter([
