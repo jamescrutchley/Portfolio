@@ -1,4 +1,5 @@
 import styles from "../styles/Contact.module.css";
+import resume from '../assets/Resume-James-Crutchley.pdf';
 
 export const Contact = () => {
   return (
@@ -26,12 +27,12 @@ export const Contact = () => {
             Resume
           </h3>
           <div className={styles.resumeRow}>
-            <a href="">
-              <p>Download PDF (340KB)</p>
+            <a href={resume} download>
+              <p>Download PDF (80KB)</p>
             </a>
           </div>
           <div className={styles.resumeRow}>
-            <a href="">
+            <a href="https://docs.google.com/document/d/1jbVTESykpT54550JH08YpMQ_cUMxk-0kzSnM1dzTEIo/edit?usp=sharing" target="_blank">
               <p>View on Google Docs</p>
             </a>
           </div>
